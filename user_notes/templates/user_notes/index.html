@@ -3,5 +3,8 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<h1>hello web</h1>
+<h1>Classes</h1>
+{% for url in urls %}
+<h2>{{url}}</h2>
+{% endfor %}
 {% endblock %}
