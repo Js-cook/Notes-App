@@ -4,7 +4,16 @@
 
 {% block content %}
 <h1>Classes</h1>
+<h3>Select a class to view notes for that class</h3>
+<div class="card-container">
 {% for url in urls %}
-<h2>{{url}}</h2>
+  {% for subject in subjects %}
+  <div class="subject-card">
+    <a href="{{url}}">
+      <h4>{{subject}}</h4>
+    </a>
+  </div>
+  {% endfor %}
 {% endfor %}
+</div>
 {% endblock %}

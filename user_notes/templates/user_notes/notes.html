@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Notes{% endblock %}
+
+{% block content %}
+
+{% for note in notes %}
+<div class="subject-card">
+  <h4>{{note}}</h4>
+  <h4>{{note.contents}}</h4>
+</div>
+{% endfor %}
+
+{% endblock %}

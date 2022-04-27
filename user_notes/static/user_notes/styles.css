@@ -1,0 +1,15 @@
+.subject-card {
+  border: 2px solid grey;
+  border-radius: 5px;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
+}
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+body {
+  background-color: #323333;
+  color: #f2e874;
+}
