@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Subject, Note
-# from django.urls import url
+from .forms import SubjectForm, NoteForm
 
 # Create your views here.
 def index(request):
@@ -15,3 +15,15 @@ def subject_notes(request, subject):
   subject_ = Subject.objects.filter(title=subject)[0]
   notes = Note.objects.all().filter(subject=subject_.id)
   return render(request, "user_notes/notes.html", {"notes":notes})
+
+def new_subject(request):
+  if request.method == "POST":
+    form = SubjectForm(request.POST)
+    
+    if form.is_valid():
+      form.save()
+      return redirect("index")
+  else:
+    form = SubjectForm()
+  return render(request, "user_notes/subject_create.html", {"form":form})  
+  

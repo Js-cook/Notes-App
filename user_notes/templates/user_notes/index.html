@@ -5,6 +5,7 @@
 {% block content %}
 <h1>Classes</h1>
 <h3>Select a class to view notes for that class</h3>
+<h5><a href="{% url 'new_subject' %}">Add a subject</a></h5>
 <div class="card-container">
 {% for url in urls %}
   {% for subject in subjects %}

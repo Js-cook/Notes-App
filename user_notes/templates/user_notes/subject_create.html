@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}New Subject{% endblock %}
+
+{% block content %}
+<form action="{% url 'new_subject' %}" method="post">
+  {% csrf_token %}
+
+  {% if form.errors %}
+  <p>There was an error submitting the form</p>
+  {% endif %}
+  
+  {{form}}
+  <input type="submit" value="Create">
+</form>
+{% endblock %}
